@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        fds
+    </title>
+</head>
+<style>
+    .four {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid #060606;
+        margin: 240px auto;
+    }
+
+    .four p {
+        width: 100px;
+        height: 1px;
+        background: #000000;
+        display: block;
+    }
+
+    .four p:first-child {
+        margin-top: 100px;
+        transform: rotate(90deg);
+        transform-origin: right;
+    }
+
+    .four p:nth-child(2) {
+        transform: rotate(180deg);
+        transform-origin: right;
+    }
+
+    .four p:nth-child(3) {
+        transform: rotate(270deg);
+        transform-origin: right;
+    }
+
+    .four p:last-child {
+        margin-top: -2px;
+    }
+
+    .five {
+        width: 180px;
+        height: 180px;
+        line-height: 180px;
+        border-radius: 50%;
+        background: #E9E5E5;
+        margin: -430px auto;
+        background: #fff;
+        position: relative;
+    }
+
+    .fourlist,
+    .fourlist2,
+    .fourlist3 {
+        width: 90px;
+        height: 1px;
+        background: #000000;
+        display: block;
+        transform: rotate(90deg);
+        transform-origin: right;
+        position: absolute;
+    }
+
+    .fourlist {
+        top: 90px;
+        left: 0px;
+        animation: one 60s linear infinite;
+    }
+
+    .fourlist2 {
+        width: 70px;
+        top: 90px;
+        left: 20px;
+        animation: one 3600s linear infinite;
+    }
+
+    .fourlist3 {
+        width: 50px;
+        top: 90px;
+        left: 40px;
+        animation: one 216000s linear infinite;
+    }
+
+    /* ———————————————— 版权声明：本文为CSDN博主「十安喜欢猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：https: //blog.csdn.net/weixin_44484520/article/details/87892520 */
+    @keyframes one {
+        0% {
+            transform: rotate(90deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="four">
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+    </div>
+    <div class="five">
+        <span class="fourlist"></span>
+        <span class="fourlist2"></span>
+        <span class="fourlist3"></span>
+    </div>
+    <div class="six"></div>
+
+    <div class="container" style="height:100px; width: 300px; background-color: red;">
+        <div class="sub" style="width: 300px; padding-top:20%;background-color: black;"></div>
+    </div>
+
+    <input type="text" id="a">
+    <span id="b"></span>
+    <script>
+        let obj = {};
+        Object.defineProperty(obj, 'hello', {
+            set: function (newVal) {
+                document.getElementById('a').value = newVal;
+                document.getElementById('b').innerHTML = newVal;
+            }
+        });
+        document.addEventListener("keyup", function (e) {
+            obj.hello = e.target.value;
+        })
+    </script>
